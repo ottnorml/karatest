@@ -1,0 +1,65 @@
+World: Opposite corners 1
+X: 5
+Y: 5
+;Kara: @
+;Tree: #
+;Leaf: .
+;Mushroom: $
+;Mushroom on Leaf: *
+;Kara on Leaf: +
+;Empty Field: Space
+#####
+@ # #
+#   #
+# # .
+#####
+
+World: Opposite corners 2
+X: 5
+Y: 5
+;Kara: @
+;Tree: #
+;Leaf: .
+;Mushroom: $
+;Mushroom on Leaf: *
+;Kara on Leaf: +
+;Empty Field: Space
+#####
+# # .
+#   #
+@ # #
+#####
+
+World: Straight way
+X: 7
+Y: 5
+;Kara: @
+;Tree: #
+;Leaf: .
+;Mushroom: $
+;Mushroom on Leaf: *
+;Kara on Leaf: +
+;Empty Field: Space
+#######
+# # # #
+@     .
+# # # #
+#######
+
+World: All variations
+X: 21
+Y: 7
+;Kara: @
+;Tree: #
+;Leaf: .
+;Mushroom: $
+;Mushroom on Leaf: *
+;Kara on Leaf: +
+;Empty Field: Space
+#####################
+@ #   # # #   # # # #
+# # # # #   #   #   #
+# # # # # # # # # # #
+# # #   # # # #   # #
+#   # #   # # # # # .
+#####################

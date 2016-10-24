@@ -1,6 +1,6 @@
-World: Assignment 0 - Create a diamond in a 3x3 world
-X: 3
-Y: 3
+World: Smallest possible world
+X: 2
+Y: 2
 ;Kara: @
 ;Tree: #
 ;Leaf: .
@@ -10,9 +10,9 @@ Y: 3
 ;Empty Field: Space
 @
 
-World: Assignment 0 - Create a diamond in a 5x5 world
-X: 5
-Y: 5
+World: 4x4 square
+X: 4
+Y: 4
 ;Kara: @
 ;Tree: #
 ;Leaf: .
@@ -22,9 +22,9 @@ Y: 5
 ;Empty Field: Space
 @
 
-World: Assignment 0 - Create a diamond in a 25x25 world
-X: 25
-Y: 25
+World: 7x4 rectangle
+X: 7
+Y: 4
 ;Kara: @
 ;Tree: #
 ;Leaf: .

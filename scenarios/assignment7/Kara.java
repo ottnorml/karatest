@@ -8,12 +8,12 @@ import greenfoot.Greenfoot;
 
 /**
  * This is the superclass for all Karas containing the basic Kara methods.
- * Programs should only be written in subclasses (e.g. Assignment0).
+ * Programs should only be written in subclasses (e.g. Assignment7).
  * <p>
  * 
  * <i>Diese Klasse ist die Oberklasse fuer alle Karas und enthaelt die
  * Grundfunktionen von Kara. Programme sollten nur in den Unterklassen wie
- * Assignment0 geschrieben werden.</i>
+ * Assignment7 geschrieben werden.</i>
  * 
  * @author Marco Jakob (http://code.makery.ch)
  */
