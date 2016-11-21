@@ -1,0 +1,63 @@
+World: Tree in the bottom right corner
+X: 4
+Y: 3
++...
+.#..
+...#
+
+World: Tree in the top right corner
+X: 4
+Y: 3
++..#
+.#..
+....
+
+World: Tree in the bottom left corner
+X: 4
+Y: 3
++...
+..#.
+#...
+
+World: Tree right in front of Kara
+X: 4
+Y: 3
++#..
+...#
+....
+
+World: Tree below of Kara
+X: 4
+Y: 3
++...
+#...
+....
+
+World: Empty World
+X: 4
+Y: 3
++...
+....
+....
+
+World: Large World
+X: 9
+Y: 8
++........
+.#.#.#.#.
+.........
+.#.#.#.#.
+.........
+.#.#.#.#.
+.........
+.#.#.#.#.
+
+World: Cascade of Trees
+X: 5
+Y: 6
++....
+#....
+.....
+.#...
+....#
+..#..

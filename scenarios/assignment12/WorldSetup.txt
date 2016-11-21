@@ -1,0 +1,28 @@
+World: Only Leaves
+X: 8
+Y: 4
++.......
+........
+........
+........
+
+World: Void
+X: 8
+Y: 4
+@
+
+World: Rectangle
+X: 8
+Y: 4
++...
+.  .
+.  .
+....
+
+World: Triangle
+X: 8
+Y: 4
++      .
+..    ..
+...  ...
+........
