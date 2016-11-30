@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.mockito.Matchers.anyString;
@@ -78,10 +79,7 @@ public class Assignment12Test extends AbstractKaraTest {
 
     private void verify(final int[] shifts, final String[] start, final String[] expected) {
         for (int shift : shifts) {
-            verify(
-                    start,
-                    expected,
-                    shift);
+            verify(start, expected, shift);
         }
     }
 
@@ -184,7 +182,8 @@ public class Assignment12Test extends AbstractKaraTest {
 
         runProgram(karaRunner, tools);
 
-        assertEquals(expected, karaRunner);
+        Assert.assertEquals("Die Welten sind nicht korrekt beim Shift von " + shift,
+                new JunitKaraRunner(0, 0, Orientation.RIGHT, expected), karaRunner);
     }
 
     @Override
