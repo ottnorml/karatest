@@ -49,6 +49,7 @@
     <commons.lang.version>3.3.2</commons.lang.version>
     <junit.version>4.12</junit.version>
     <mockito.version>1.10.19</mockito.version>
+    <assertj.version>3.6.1</assertj.version>
 
     <!-- Maven Plug-ins Configuration -->
     <site.maven.plugin>3.4</site.maven.plugin>
@@ -91,6 +92,12 @@
       <artifactId>mockito-all</artifactId>
       <version>${mockito.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${assertj.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -119,6 +126,9 @@
                   <directory>scenarios</directory>
                   <includes>
                     <include>**/Assignment*.java</include>
+                    <include>**/Pixel.java</include>
+                    <include>**/Line.java</include>
+                    <include>**/Box.java</include>
                   </includes>
                   <filtering>false</filtering>
                 </resource>

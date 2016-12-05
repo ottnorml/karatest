@@ -1,0 +1,11 @@
+World: Assignment 15
+X: 12
+Y: 8
+;Kara: @
+;Tree: #
+;Leaf: .
+;Mushroom: $
+;Mushroom on Leaf: *
+;Kara on Leaf: +
+;Empty Field: Space
+@
