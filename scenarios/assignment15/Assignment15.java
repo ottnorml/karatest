@@ -1,5 +1,6 @@
 /**
- * Example code for assignment 15. Calls several methods that need to be implemented in {@link Canvas}.
+ * Example code for assignment 15. Calls several methods that need to be implemented in {@link Pixel},
+ * {@link Line}, and {@link Box}.
  *
  * @author Ullrich Hafner
  */
@@ -15,11 +16,14 @@ public class Assignment15 extends Kara {
         height = computeHeight();
 
         Pixel topLeftCorner = new Pixel(0, 0);
-        Pixel topRightCorner = new Pixel(width - 1, 0);
-        Pixel bottomLeftCorner = new Pixel(0, height - 1);
-        Pixel bottomRightCorner = new Pixel(width - 1, height - 1);
+        Pixel topRightCorner = topLeftCorner.move(width - 1, 0);
+        Pixel bottomLeftCorner = topLeftCorner.move(0, height - 1);
+        Pixel bottomRightCorner = topLeftCorner.move(width - 1, height - 1);
 
         draw(topLeftCorner, topRightCorner, bottomLeftCorner, bottomRightCorner);
+
+        readLong("Edge Pixels...");
+        clear();
 
         draw(new Pixel(-1, 0));
         draw(new Pixel(0, -1));
@@ -33,19 +37,54 @@ public class Assignment15 extends Kara {
         clear();
 
         Line top = new Line(topLeftCorner, width);
-        Line bottom = new Line(bottomLeftCorner, width, true);
+        Line bottom = top.move(0, height - 1);
         Line left = new Line(topLeftCorner, height, false);
-        Line right = new Line(topRightCorner, width, false);
+        Line right = left.move(width - 1, 0);
 
         draw(top, bottom, left, right);
 
+        readLong("Intersection...");
+
+        if (top.intersects(left) && top.intersects(right)
+                && left.intersects(top) && left.intersects(bottom)
+                && !top.intersects(bottom) && !left.intersects(right)) {
+            clear();
+        }
+
+        draw(top, bottom, left, right);
+
+        readLong("Contains...");
+
+        if (top.contains(topLeftCorner) && top.contains(topRightCorner)
+                && !top.contains(bottomLeftCorner) && !top.contains(bottomRightCorner)) {
+            clear();
+        }
+
         readLong("Boxes...");
-        clear();
 
         Box rectangle = new Box(topLeftCorner, width, height, false);
-        Box filled = new Box(topLeftCorner.move(2, 2), width - 4, height - 4);
+        Box filled = new Box(topLeftCorner.move(2, 2), width - 4, height - 4, true);
 
         draw(rectangle, filled);
+
+        readLong("Intersection...");
+        clear();
+
+        if (filled.move(-2, -2).intersects(rectangle)) {
+            draw(rectangle, filled.move(-2, -2));
+        }
+        if (rectangle.intersects(left.move(1, 0))) {
+            draw(left.move(1, 0));
+        }
+        if (rectangle.intersects(new Box(topLeftCorner.move(2, 2), width - 4, height - 4))) {
+            clear();
+        }
+        readLong("Contains...");
+        clear();
+
+        if (rectangle.contains(topLeftCorner) && !filled.contains(topLeftCorner)) {
+            draw(rectangle, new Box(topLeftCorner.move(2, 2), width - 4, height - 4));
+        }
     }
 
     private void clear() {
@@ -95,7 +134,7 @@ public class Assignment15 extends Kara {
     }
 
     private boolean isValid(final int x, final int y) {
-        return x >= 0 && y >= 0&& x < width && y < height;
+        return x >= 0 && y >= 0 && x < width && y < height;
     }
 
     private void moveBy(final int xDelta, final int yDelta) {
