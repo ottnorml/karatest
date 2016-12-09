@@ -125,7 +125,6 @@
                 <resource>
                   <directory>scenarios</directory>
                   <includes>
-                    <include>**/Assignment*.java</include>
                     <include>**/Pixel.java</include>
                     <include>**/Line.java</include>
                     <include>**/Box.java</include>
@@ -206,7 +205,9 @@
             </formats>
             <instrumentation>
               <includes>
-                <include>**/Assignment*.class</include>
+                <include>**/Pixel*.class</include>
+                <include>**/Line*.class</include>
+                <include>**/Box*.class</include>
               </includes>
             </instrumentation>
           </configuration>
