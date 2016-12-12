@@ -15,6 +15,16 @@ public class LineTest {
             new Pixel(2, 5), new Pixel(2, 6)};
 
     @Test
+    public void shouldCreateAPointAsLine() {
+        Pixel start = new Pixel(3, 5);
+        Line line = new Line(start, 1, true);
+        assertThat(line.getPixels()).containsExactly(start);
+
+        line = new Line(start, 1, false);
+        assertThat(line.getPixels()).containsExactly(start);
+    }
+
+    @Test
     public void shouldCreateHorizontalLine() {
         Line line = createHorizontalLine();
         verifyHorizontalLine(line);
@@ -28,13 +38,21 @@ public class LineTest {
     }
 
     private void verifyHorizontalLine(final Line line) {
-        assertThat(line.getPixels()).containsExactly(HORIZONTAL_PIXELS);
+        assertThat(line.getPixels()).containsExactlyInAnyOrder(HORIZONTAL_PIXELS);
+    }
+
+    @Test
+    public void shouldNeverReturnInternalArray() {
+        Line line = createVerticalLine();
+        Pixel[] copyOrInternal = line.getPixels();
+        copyOrInternal[0] = null;
+
+        assertThat(line.getPixels()).containsExactlyInAnyOrder(VERTICAL_PIXELS);
     }
 
     @Test
     public void shouldCreateVerticalLine() {
-        Line line = createVerticalLine();
-        assertThat(line.getPixels()).containsExactly(VERTICAL_PIXELS);
+        assertThat(createVerticalLine().getPixels()).containsExactlyInAnyOrder(VERTICAL_PIXELS);
     }
 
     private Line createVerticalLine() {
@@ -73,7 +91,9 @@ public class LineTest {
         assertThat(createHorizontalLine().intersects(createVerticalLine().move(0, -1))).isTrue();
         assertThat(createHorizontalLine().intersects(createVerticalLine().move(0, 1))).isFalse();
 
-        assertThat(new Line(new Pixel(2, 4), 5).intersects(new Line(new Pixel(3, 3), 2, false))).isTrue();
-        assertThat(new Line(new Pixel(2, 4), 5).intersects(new Line(new Pixel(1, 3), 2, false))).isFalse();
+        assertThat(new Line(new Pixel(2, 4), 5)
+                .intersects(new Line(new Pixel(3, 3), 2, false))).isTrue();
+        assertThat(new Line(new Pixel(2, 4), 5)
+                .intersects(new Line(new Pixel(1, 3), 2, false))).isFalse();
     }
 }
